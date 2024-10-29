@@ -12,74 +12,70 @@ function getComputerChoice() {
     }
 
 }
+// ui  //
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
+const playerScoreUpdate = document.getElementById("player");
+const computerScoreUpdate = document.getElementById("computer");
+const resultTxt = document.getElementById("result");
 
-// console.log(getComputerChoice())
+rockBtn.addEventListener("click",() => getHumanChoice("rock"));
+paperBtn.addEventListener("click",() => getHumanChoice("paper"));
+scissorsBtn.addEventListener("click",() => getHumanChoice("scissors"));
 
-
-function getHumanChoice(choice){
-    
-    choice = prompt("please enter Your Choice(Rock, Paper or Scissors): ").toLowerCase();
-    
-    return choice;
+function getHumanChoice(humanSelection){
+    const computerSelection = getComputerChoice();
+    return playRound(humanSelection,computerSelection)
 }
-// console.log(getHumanChoice())
 
 let humanScore = 0;
 let computerScore = 0;
 
 
 
-function playGame() {
-    for( i =0; i<=5; i++){
-        
-        function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice) {
 
-    
-            if (humanChoice == computerChoice){
-                console.log("Its a Draw ");
-            }
-        
-            else if  (
-                (humanChoice == "rock" && computerChoice == "paper") || 
-                (humanChoice == "paper" && computerChoice == "scissors") || 
-                (humanChoice == "scissors" && computerChoice == "rock")){
-                    console.log("You Lose this Round");
-                    computerScore++ ;
-                    console.log("Score- Player: "+ humanScore + " Computer: " + computerScore);
-            }
-             else if  (
-                (humanChoice == "rock" && computerChoice == "scissors") || 
-                (humanChoice == "paper" && computerChoice == "rock") || 
-                (humanChoice == "scissors" && computerChoice == "paper") ){
-                    console.log("You Won this Round");
-                    humanScore++ ;
-                    console.log("Score- Player: "+ humanScore + " Computer: " + computerScore);
-
-            }
-        
-            else {
-                console.log("Invalid Value, PLease enter Rock, Paper or Scissors.");
-            }
-        }
-
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        
-        playRound(humanSelection,computerSelection)
-
-        
+    if (humanChoice == computerChoice){
+        resultTxt.textContent = "Its a Draw ";
     }
 
+    else if  (
+        (humanChoice == "rock" && computerChoice == "paper") || 
+        (humanChoice == "paper" && computerChoice == "scissors") || 
+        (humanChoice == "scissors" && computerChoice == "rock")){
+            resultTxt.textContent ="You Lose this Round";
+            computerScore++ ;
+            playerScoreUpdate.textContent = humanScore;
+            computerScoreUpdate.textContent = computerScore;
+    }
+     else if  (
+        (humanChoice == "rock" && computerChoice == "scissors") || 
+        (humanChoice == "paper" && computerChoice == "rock") || 
+        (humanChoice == "scissors" && computerChoice == "paper") ){
+            resultTxt.textContent ="You Won this Round";
+            humanScore++ ;
+            playerScoreUpdate.textContent = humanScore;
+            computerScoreUpdate.textContent = computerScore;
+
+    }
+    // to check if player has won the Game//
+    if (humanScore === 5){
+        resultTxt.textContent ="You Have Won the Game. Your Total Score is " + humanScore + " to " + computerScore + " ,Congragulations.";
+        resetGame();
+    }
+    else if (computerScore === 5){ 
+        resultTxt.textContent ="You Have lost the Game.Your Total Score is " + humanScore + " to " + computerScore + " ,Better Luck Next Time.";
+        resetGame();
+    }
+}
+
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    playerScoreUpdate.textContent = humanScore;
+    computerScoreUpdate.textContent = computerScore;
 }
 
 
-playGame()
-if (humanScore > computerScore){
-    console.log("You Have Won the Game. Your Total Score is " + humanScore + " to " + computerScore + " ,Congragulations.");
-}
-
-else {
-    console.log("You Have lost the Game. Your Total Score is " + humanScore + " to " + computerScore + " ,Better Luck Next Time.");
-
-}
-
+    
