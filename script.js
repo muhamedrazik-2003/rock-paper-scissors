@@ -35,7 +35,7 @@ let computerScore = 0;
 
 
 function playRound(humanChoice, computerChoice) {
-
+   
     if (humanChoice == computerChoice){
         resultTxt.textContent = "Its a Draw ";
     }
@@ -75,6 +75,7 @@ function resetGame() {
     computerScore = 0;
     playerScoreUpdate.textContent = humanScore;
     computerScoreUpdate.textContent = computerScore;
+    
 }
 
 
