@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,50 @@
     <link rel="stylesheet" href="style.css">
     <title>Rock Paper and Scissors Game</title>
 </head>
+
 <body>
-    <div class="display-score">
+    <main>
+        <section>
+            <h2>You</h2>
+            <div class="playbutton">
+                <button id="player-rock">Rock</button>
+                <button id="player-paper">Paper</button>
+                <button id="player-scissors">Scissors</button>
+            </div>
+        </section>
+        <section id="scoreboard">
+            <h3>Total Score</h3>
+            <div>
+                <p class="score" id="player">0</p>
+                <p>-</p>
+                <p class="score" id="computer">0</p>
+            </div>
+            <p id="result">You Won this Round</p>
+        </section>
+        <section>
+            <h2>System</h2>
+            <div class="playbutton">
+                <button id="computer-rock">Rock</button>
+                <button id="computer-paper">Paper</button>
+                <button id="computer-scissors">Scissors</button>
+            </div>
+        </section>
+    </main>
+    <!-- <div class="display-score">
         <div>
             <h2>Player Score</h2>
-            <div class="score" id="player">0</div>
         </div>
         <div>
             <h2>Computer Score</h2>
-            <div class="score" id="computer">0</div>
         </div>
     </div>
 
-   <div class="playbutton">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-   </div>
+
    <div class="scoreboard">
-    <p id="result"></p>
-   </div>
-    
+    <p ></p>
+   </div> -->
+
 
 </body>
+
 </html>

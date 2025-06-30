@@ -13,16 +13,16 @@ function getComputerChoice() {
 
 }
 // ui  //
-const rockBtn = document.getElementById("rock");
-const paperBtn = document.getElementById("paper");
-const scissorsBtn = document.getElementById("scissors");
+const playerRockBtn = document.getElementById("player-rock");
+const playerPaperBtn = document.getElementById("player-paper");
+const playerScissorsBtn = document.getElementById("player-scissors");
 const playerScoreUpdate = document.getElementById("player");
 const computerScoreUpdate = document.getElementById("computer");
 const resultTxt = document.getElementById("result");
 
-rockBtn.addEventListener("click",() => getHumanChoice("rock"));
-paperBtn.addEventListener("click",() => getHumanChoice("paper"));
-scissorsBtn.addEventListener("click",() => getHumanChoice("scissors"));
+playerRockBtn.addEventListener("click",() => getHumanChoice("rock"));
+playerPaperBtn.addEventListener("click",() => getHumanChoice("paper"));
+playerScissorsBtn.addEventListener("click",() => getHumanChoice("scissors"));
 
 function getHumanChoice(humanSelection){
     const computerSelection = getComputerChoice();
