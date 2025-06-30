@@ -11,29 +11,35 @@
 
 <body>
     <main>
-        <section>
+        <section class="play-section player-section">
             <h2>You</h2>
-            <div class="playbutton">
-                <button id="player-rock">Rock</button>
-                <button id="player-paper">Paper</button>
-                <button id="player-scissors">Scissors</button>
+            <div class="playbutton player-playbutton">
+                <button id="player-rock">🪨</button>
+                <div class="line-1"></div>
+                <button id="player-paper">📃</button>
+                <div class="line-2"></div>
+                <button id="player-scissors">✂️</button>
+                <div class="line-3"></div>
             </div>
         </section>
-        <section id="scoreboard">
+        <section class="score-section">
             <h3>Total Score</h3>
-            <div>
+            <div id="scoreboard">
                 <p class="score" id="player">0</p>
-                <p>-</p>
+                <p class="score">-</p>
                 <p class="score" id="computer">0</p>
             </div>
-            <p id="result">You Won this Round</p>
+            <p id="result">You Won this Round 😀</p>
         </section>
-        <section>
+        <section class="play-section">
             <h2>System</h2>
             <div class="playbutton">
-                <button id="computer-rock">Rock</button>
-                <button id="computer-paper">Paper</button>
-                <button id="computer-scissors">Scissors</button>
+                <button id="computer-rock">🪨</button>
+                <div class="line-1"></div>
+                <button id="computer-paper">📃</button>
+                <div class="line-2"></div>
+                <button id="computer-scissors">✂️</button>
+                <div class="line-3"></div>
             </div>
         </section>
     </main>
