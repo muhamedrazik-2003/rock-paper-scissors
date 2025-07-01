@@ -308,7 +308,7 @@
      border-radius: 1rem;
      background-color: hsl(48, 100%, 46%);
      width: 85%;
-     height: 65%;
+     height: 55%;
      opacity: 0;
      animation: gameOverEntry 300ms ease-in-out forwards;
 
@@ -326,30 +326,23 @@
      }
  }
 
+ .game-status {
+     font-size: clamp(2.5rem, 5vw, 3rem);
+     text-shadow: 3px 3px 1px rgb(209, 156, 0);
+ }
+
  #game-ended .game-score {
-    width: 60%;
-    font-size: clamp(1.3rem,3vw,1.5rem);
+     width: 70%;
+     font-size: clamp(1.8rem, 3vw, 2rem);
      font-family: 'myFont-score';
 
  }
 
  #game-ended button {
-     margin-top: 2rem;
-     font-size: 1.6rem;
-     width: 300px;
-     padding: 8px 16px 16px;
-     border-radius: 56px;
- }
-
- .game-status {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-     text-shadow: 3px 3px 1px rgb(209, 156, 0);
- }
-  #game-ended button {
-     margin-top: 1rem;
-     font-size: 1rem;
-     width: 180px;
-     padding: 6px 12px;
+     margin-top: 3rem;
+     font-size: 1.5rem;
+     width: 280px;
+     padding: 8px 16px;
      border-radius: 56px;
  }
 
@@ -452,10 +445,11 @@
          width: 300px;
          padding: 8px 16px 16px;
      }
-      #game-ended {
-        width: 75%;
-        height: 75%;
-      }
+
+     #game-ended {
+         width: 75%;
+         height: 75%;
+     }
  }
 
  @media (min-width:1024px) {
