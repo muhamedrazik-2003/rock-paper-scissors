@@ -21,7 +21,8 @@ const computerScissorsBtn = document.getElementById("computer-scissors");
 const playerScoreUpdate = document.getElementById("player");
 const computerScoreUpdate = document.getElementById("computer");
 const resultTxt = document.getElementById("result");
-const roundNumber = document.getElementById("roundNumber")
+const roundNumber = document.getElementById("roundNumber");
+const floatingInfoBtn = document.querySelector('.floating-info-btn')
 
 playerRockBtn.addEventListener("click", () => getHumanChoice("rock"));
 playerPaperBtn.addEventListener("click", () => getHumanChoice("paper"));
