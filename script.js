@@ -24,17 +24,20 @@ const resultTxt = document.getElementById("result");
 const roundNumber = document.getElementById("roundNumber");
 const infoContainer = document.querySelector(".floating-info-container");
 const floatingInfo = document.querySelector("#floating-info");
+const gameEnded = document.querySelector("#game-ended-container");
+const gameEndedStatus = document.querySelector(".game-status");
+const gameEndedScore = document.querySelector(".game-score");
+const playAgain = document.querySelector(".play-again");
 
-infoContainer.addEventListener("click",() => {
-    floatingInfo.classList.toggle("show");
-})
+infoContainer.addEventListener("click", () => {
+  floatingInfo.classList.toggle("show");
+});
 
-document.addEventListener('click', (e) => {
-    if(!infoContainer.contains(e.target)) {
-        floatingInfo.classList.remove('show');
-    }
-})
-
+document.addEventListener("click", (e) => {
+  if (!infoContainer.contains(e.target)) {
+    floatingInfo.classList.remove("show");
+  }
+});
 
 playerRockBtn.addEventListener("click", () => getHumanChoice("rock"));
 playerPaperBtn.addEventListener("click", () => getHumanChoice("paper"));
@@ -53,9 +56,7 @@ let gameStatus = "";
 let currentRound = 0;
 
 function gameStatusIndicator(gameStatus, lostButton, wonButton) {
-  console.log("won button", wonButton);
-  console.log("lost button", lostButton);
-  if (gameStatus === "won") {
+  if (gameStatus === "You won 😄") {
     resultTxt.style.backgroundColor = "hsl(113, 100%, 30%)";
     if (wonButton === "rock") {
       playerRockBtn.style.borderColor = "hsl(113, 100%, 30%)";
@@ -71,7 +72,7 @@ function gameStatusIndicator(gameStatus, lostButton, wonButton) {
     } else if (lostButton === "scissors") {
       computerScissorsBtn.style.borderColor = "hsl(0, 100%, 45%)";
     }
-  } else if (gameStatus === "lost") {
+  } else if (gameStatus === "You lost 🥺") {
     resultTxt.style.backgroundColor = "hsl(0, 100%, 45%)";
     if (lostButton === "rock") {
       playerRockBtn.style.borderColor = "hsl(0, 100%, 45%)";
@@ -110,8 +111,8 @@ function gameStatusIndicator(gameStatus, lostButton, wonButton) {
 }
 
 function playRound(humanChoice, computerChoice) {
-    currentRound++;
-    roundNumber.textContent = currentRound;
+  currentRound++;
+  roundNumber.textContent = currentRound;
 
   if (humanChoice == computerChoice) {
     isLostButton = humanChoice;
@@ -126,7 +127,7 @@ function playRound(humanChoice, computerChoice) {
   ) {
     isLostButton = humanChoice;
     isWonButton = computerChoice;
-    gameStatus = "lost";
+    gameStatus = "You lost 🥺";
     gameStatusIndicator(gameStatus, isLostButton, isWonButton);
     resultTxt.textContent = "You Lose this Round 🥺";
     computerScore++;
@@ -139,7 +140,7 @@ function playRound(humanChoice, computerChoice) {
   ) {
     isWonButton = humanChoice;
     isLostButton = computerChoice;
-    gameStatus = "won";
+    gameStatus = "You won 😄";
     gameStatusIndicator(gameStatus, isLostButton, isWonButton);
     resultTxt.textContent = "You Won this Round 😄";
     humanScore++;
@@ -147,22 +148,16 @@ function playRound(humanChoice, computerChoice) {
     computerScoreUpdate.textContent = computerScore;
   }
   // to check if player has won the Game//
-  if (humanScore === 5) {
-    resultTxt.textContent =
-      "You Have Won the Game. Your Total Score is " +
-      humanScore +
-      " to " +
-      computerScore +
-      " ,Congragulations.";
-    resetGame();
-  } else if (computerScore === 5) {
-    resultTxt.textContent =
-      "You Have lost the Game.Your Total Score is " +
-      humanScore +
-      " to " +
-      computerScore +
-      " ,Better Luck Next Time.";
-    resetGame();
+  if (humanScore === 5 || computerScore === 5) {
+    gameEnded.classList.add("show");
+    gameEndedStatus.textContent = gameStatus;
+    gameEndedScore.textContent =
+      "Your Total Score is " + humanScore + " to " + computerScore;
+    playAgain.addEventListener("click", () => {
+      resetGame();
+    gameEnded.classList.remove("show");
+
+    });
   }
 }
 

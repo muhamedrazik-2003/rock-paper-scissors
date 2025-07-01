@@ -167,7 +167,7 @@
  .player-playbutton button {
      outline: none;
      cursor: pointer;
-     transition: all 150ms ease;
+     transition: all 200ms ease-in-out;
      transform: rotate(180deg);
  }
 
@@ -241,9 +241,11 @@
      align-items: center;
      gap: 12px;
  }
+
  .round-section h3 {
-    text-wrap: nowrap;
+     text-wrap: nowrap;
  }
+
  .floating-info-container {
      position: relative;
  }
@@ -275,8 +277,66 @@
      border-radius: 8px;
      box-shadow: 8px 8px 4px rgb(96, 62, 0);
  }
+
  #floating-info.show {
-    display: block;
+     display: block;
+ }
+
+ #game-ended-container {
+     position: fixed;
+     inset: 0;
+     backdrop-filter: blur(3px);
+     background: rgba(0, 0, 0, 0.727);
+     display: none;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     font-size: 2rem;
+     z-index: 1000;
+ }
+
+ #game-ended-container.show {
+     display: flex;
+ }
+
+ #game-ended {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 1.5rem;
+     border-radius: 1rem;
+     background-color: hsl(48, 100%, 46%);
+     width: 75%;
+     height: 75%;
+     opacity: 0;
+     animation: gameOverEntry 300ms  ease-in-out forwards;
+
+ }
+@keyframes gameOverEntry {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    } to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+ #game-ended .game-score {
+     font-family: 'myFont-score';
+
+ }
+
+ #game-ended button {
+     margin-top: 2rem;
+     font-size: 1.6rem;
+     width: 300px;
+     padding: 8px 16px 16px;
+     border-radius: 56px;
+ }
+ .game-status {
+    text-shadow: 3px 3px 10px rgb(138, 103, 0);
  }
 
  @media (min-width: 768px) {
@@ -388,8 +448,9 @@
      .playbutton {
          gap: 8rem 2rem;
      }
-      #floating-info {
-        width: 400px;
-        right: -570%;
-      }
+
+     #floating-info {
+         width: 400px;
+         right: -570%;
+     }
  }
