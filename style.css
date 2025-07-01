@@ -72,7 +72,7 @@
 
  body {
      height: 100%;
-     background-color: hsl(48, 100%, 46%);
+     background-color: hsl(46, 100%, 51%);
      font-family: 'MyFont-regular', 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
  }
 
@@ -99,7 +99,7 @@
  }
 
  button {
-     background-color: hsl(50, 100%, 65%);
+     background-color: hsl(50, 100%, 67%);
      border: 6px solid hsl(40, 100%, 11%);
      transition: all 150ms ease;
      font-size: 2.2rem;
@@ -307,23 +307,28 @@
      gap: 1.5rem;
      border-radius: 1rem;
      background-color: hsl(48, 100%, 46%);
-     width: 75%;
-     height: 75%;
+     width: 85%;
+     height: 65%;
      opacity: 0;
-     animation: gameOverEntry 300ms  ease-in-out forwards;
+     animation: gameOverEntry 300ms ease-in-out forwards;
 
  }
-@keyframes gameOverEntry {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    } to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+
+ @keyframes gameOverEntry {
+     from {
+         opacity: 0;
+         transform: scale(0.5);
+     }
+
+     to {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
 
  #game-ended .game-score {
+    width: 60%;
+    font-size: clamp(1.3rem,3vw,1.5rem);
      font-family: 'myFont-score';
 
  }
@@ -335,8 +340,17 @@
      padding: 8px 16px 16px;
      border-radius: 56px;
  }
+
  .game-status {
-    text-shadow: 3px 3px 10px rgb(138, 103, 0);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+     text-shadow: 3px 3px 1px rgb(209, 156, 0);
+ }
+  #game-ended button {
+     margin-top: 1rem;
+     font-size: 1rem;
+     width: 180px;
+     padding: 6px 12px;
+     border-radius: 56px;
  }
 
  @media (min-width: 768px) {
@@ -431,6 +445,17 @@
      #floating-info {
          right: -250%;
      }
+
+     #game-ended button {
+         margin-top: 2rem;
+         font-size: 1.6rem;
+         width: 300px;
+         padding: 8px 16px 16px;
+     }
+      #game-ended {
+        width: 75%;
+        height: 75%;
+      }
  }
 
  @media (min-width:1024px) {
