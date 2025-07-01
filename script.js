@@ -22,7 +22,19 @@ const playerScoreUpdate = document.getElementById("player");
 const computerScoreUpdate = document.getElementById("computer");
 const resultTxt = document.getElementById("result");
 const roundNumber = document.getElementById("roundNumber");
-const floatingInfoBtn = document.querySelector('.floating-info-btn')
+const infoContainer = document.querySelector(".floating-info-container");
+const floatingInfo = document.querySelector("#floating-info");
+
+infoContainer.addEventListener("click",() => {
+    floatingInfo.classList.toggle("show");
+})
+
+document.addEventListener('click', (e) => {
+    if(!infoContainer.contains(e.target)) {
+        floatingInfo.classList.remove('show');
+    }
+})
+
 
 playerRockBtn.addEventListener("click", () => getHumanChoice("rock"));
 playerPaperBtn.addEventListener("click", () => getHumanChoice("paper"));

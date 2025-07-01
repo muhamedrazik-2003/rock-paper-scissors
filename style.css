@@ -233,32 +233,40 @@
  }
 
  .round-section {
-     position: relative;
-     font-family: 'myFont-score';
      /*changed font because other font not displaying number 4*/
+     font-family: 'myFont-score';
      margin-top: 16px;
      display: flex;
      justify-content: center;
      align-items: center;
      gap: 12px;
  }
+ .round-section h3 {
+    text-wrap: nowrap;
+ }
+ .floating-info-container {
+     position: relative;
+ }
 
  .floating-info-btn {
      color: #706802;
      margin-bottom: 4px;
  }
+
  .floating-info-btn:hover {
-    cursor: pointer;
-    color: #3c3800;
+     cursor: pointer;
+     color: #3c3800;
  }
+
  .floating-info-container:hover #floating-info {
-    display: block;
+     display: block;
  }
+
  #floating-info {
-    width: 400px;
-    top: 100%;
-    left: -5%;
-    display: none;
+     width: 200px;
+     top: 100%;
+     right: -150%;
+     display: none;
      position: absolute;
      color: rgb(255, 255, 206);
      background-color: rgb(32, 26, 0);
@@ -266,6 +274,9 @@
      padding: 8px 16px;
      border-radius: 8px;
      box-shadow: 8px 8px 4px rgb(96, 62, 0);
+ }
+ #floating-info.show {
+    display: block;
  }
 
  @media (min-width: 768px) {
@@ -357,8 +368,8 @@
              0 0 0 26px hsla(49, 100%, 79%, 0.523);
      }
 
-     .score-section {
-         width: 400px;
+     #floating-info {
+         right: -250%;
      }
  }
 
@@ -370,7 +381,15 @@
          padding: 1.5rem;
      }
 
+     .score-section {
+         width: 400px;
+     }
+
      .playbutton {
          gap: 8rem 2rem;
      }
+      #floating-info {
+        width: 400px;
+        right: -570%;
+      }
  }
