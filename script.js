@@ -21,6 +21,7 @@ const computerScissorsBtn = document.getElementById("computer-scissors");
 const playerScoreUpdate = document.getElementById("player");
 const computerScoreUpdate = document.getElementById("computer");
 const resultTxt = document.getElementById("result");
+const roundNumber = document.getElementById("roundNumber")
 
 playerRockBtn.addEventListener("click", () => getHumanChoice("rock"));
 playerPaperBtn.addEventListener("click", () => getHumanChoice("paper"));
@@ -36,6 +37,7 @@ let computerScore = 0;
 let isLostButton = "";
 let isWonButton = "";
 let gameStatus = "";
+let currentRound = 0;
 
 function gameStatusIndicator(gameStatus, lostButton, wonButton) {
   console.log("won button", wonButton);
@@ -91,10 +93,13 @@ function gameStatusIndicator(gameStatus, lostButton, wonButton) {
     });
     resultTxt.style.backgroundColor = "black";
     resultTxt.textContent = "Lets Play More 🤩";
-  }, 800);
+  }, 1000);
 }
 
 function playRound(humanChoice, computerChoice) {
+    currentRound++;
+    roundNumber.textContent = currentRound;
+
   if (humanChoice == computerChoice) {
     isLostButton = humanChoice;
     isWonButton = computerChoice;

@@ -229,6 +229,16 @@
      margin-top: 12px;
      font-size: 1rem;
  }
+ .round-display {
+     font-family: 'myFont-score'; /*changed font because other font not displaying number 4*/
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ #roundNumber {
+    padding-left: 12px;
+ }
 
  @media (min-width: 768px) {
      h1 svg {
@@ -251,9 +261,9 @@
      }
 
      .play-section {
-         /* width: 400px; */
-         font-size: 2rem;
-         gap: 2rem;
+         margin-top: 2rem;
+         font-size: 1.5rem;
+         gap: 1.5rem;
 
      }
 
