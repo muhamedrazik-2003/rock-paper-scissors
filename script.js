@@ -150,13 +150,14 @@ function playRound(humanChoice, computerChoice) {
   // to check if player has won the Game//
   if (humanScore === 5 || computerScore === 5) {
     gameEnded.classList.add("show");
+    document.body.style.overflow = "hidden";
     gameEndedStatus.textContent = gameStatus;
     gameEndedScore.textContent =
       "Your Total Score is " + humanScore + " to " + computerScore;
     playAgain.addEventListener("click", () => {
       resetGame();
-    gameEnded.classList.remove("show");
-
+      gameEnded.classList.remove("show");
+      document.body.style.overflow = "visible";
     });
   }
 }

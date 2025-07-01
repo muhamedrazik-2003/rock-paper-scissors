@@ -81,7 +81,7 @@
      align-items: center;
      justify-content: center;
      font-size: clamp(24px, 4vw, 2.5rem);
-     margin-block: 1rem 2rem;
+     margin-block: 1rem 1rem;
  }
 
  h1 svg {
@@ -208,7 +208,7 @@
  /* score section */
  .score-section {
      font-size: 1rem;
-     margin-block: 2rem;
+     margin-block: 1rem;
  }
 
  #scoreboard {
@@ -308,7 +308,7 @@
      border-radius: 1rem;
      background-color: hsl(48, 100%, 46%);
      width: 85%;
-     height: 55%;
+     height: 60%;
      opacity: 0;
      animation: gameOverEntry 300ms ease-in-out forwards;
 
@@ -339,6 +339,7 @@
  }
 
  #game-ended button {
+    color: black;
      margin-top: 3rem;
      font-size: 1.5rem;
      width: 280px;
@@ -453,6 +454,9 @@
  }
 
  @media (min-width:1024px) {
+    h1 {
+     margin-block: 1rem 2rem;
+    }
      button {
          width: 100px;
          border-width: 10px;
