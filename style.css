@@ -226,19 +226,21 @@
      }
 
      button {
-         border-width: 10px;
-         font-size: 3rem;
-         padding: 1.5rem;
+         width: 90px;
+         border-width: 8px;
+         font-size: 2.5rem;
+         padding: 1.3rem;
      }
 
      .play-section {
+         /* width: 400px; */
          font-size: 2rem;
          gap: 2rem;
 
      }
 
      .playbutton {
-         gap: 8rem 2rem;
+         gap: 5rem 2rem;
      }
 
      .player-section {
@@ -249,8 +251,17 @@
          transform: rotate(100deg);
      }
 
+     .player-playbutton button {
+         transform: rotate(-100deg);
+     }
+
      .computer-playbutton {
          transform: rotate(-100deg);
+     }
+
+     .computer-playbutton button {
+         transform: rotate(100deg);
+
      }
 
      .line-1,
@@ -275,6 +286,7 @@
      }
 
      .player-playbutton button:hover {
+         transform: rotate(-100deg);
          box-shadow:
              0 0 0 12px hsla(49, 100%, 67%, 0.841),
              0 0 0 24px hsla(49, 100%, 86%, 0);
@@ -282,7 +294,7 @@
      }
 
      .player-playbutton button:active {
-         transform: rotate(180deg) scale(1);
+         transform: rotate(-100deg) scale(1);
          box-shadow:
              0 0 0 14px hsla(49, 70%, 60%, 0.76),
              0 0 0 26px hsla(49, 100%, 79%, 0.523);
@@ -290,5 +302,17 @@
 
      .score-section {
          width: 400px;
+     }
+ }
+  @media (min-width:1024px) {
+     button {
+         width: 100px;
+         border-width: 10px;
+         font-size: 3rem;
+         padding: 1.5rem;
+     }
+
+     .playbutton {
+         gap: 8rem 2rem;
      }
  }
