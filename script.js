@@ -44,7 +44,7 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice == "rock" && computerChoice == "paper") || 
         (humanChoice == "paper" && computerChoice == "scissors") || 
         (humanChoice == "scissors" && computerChoice == "rock")){
-            resultTxt.textContent ="You Lose this Round";
+            resultTxt.textContent ="You Lose this Round 🥺";
             computerScore++ ;
             playerScoreUpdate.textContent = humanScore;
             computerScoreUpdate.textContent = computerScore;
@@ -53,7 +53,7 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice == "rock" && computerChoice == "scissors") || 
         (humanChoice == "paper" && computerChoice == "rock") || 
         (humanChoice == "scissors" && computerChoice == "paper") ){
-            resultTxt.textContent ="You Won this Round";
+            resultTxt.textContent ="You Won this Round 😄";
             humanScore++ ;
             playerScoreUpdate.textContent = humanScore;
             computerScoreUpdate.textContent = computerScore;
