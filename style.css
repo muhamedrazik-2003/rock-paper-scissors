@@ -71,12 +71,24 @@
 
 
  body {
+     height: 100%;
      background-color: hsl(48, 100%, 46%);
      font-family: 'MyFont-regular', 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
  }
+ h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px,4vw,2.5rem);
+    margin-block: 1rem 2rem;
+ }
+ h1 svg {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+ }
 
  main {
-     min-height: 100vh;
      display: flex;
      flex-direction: column-reverse;
      justify-content: center;
@@ -87,8 +99,8 @@
  button {
      background-color: hsl(50, 100%, 65%);
      border: 6px solid hsl(40, 100%, 11%);
-     font-size: 2rem;
-     padding: .5rem;
+     font-size: 2.2rem;
+     padding: 1.2rem;
      border-radius: 50%;
  }
 
@@ -107,7 +119,7 @@
      grid-template-columns: 1fr 1fr 1fr;
      grid-template-rows: 1fr 1fr;
      place-content: center;
-     row-gap: 1.4rem;
+     row-gap: 2.6rem;
  }
 
  .line-1,
@@ -124,16 +136,16 @@
  }
 
  .line-2 {
-     top: 51%;
-     left: 1.5%;
-     transform: rotate(53deg);
+     top: 50%;
+     left: 2%;
+     transform: rotate(55deg);
  }
 
  .line-3 {
-     top: 51%;
+     top: 50%;
      left: unset;
-     right: 1.5%;
-     transform: rotate(-53deg);
+     right: 2%;
+     transform: rotate(-55deg);
  }
 
  /* player button section */
@@ -218,6 +230,11 @@
  }
 
  @media (min-width: 768px) {
+     h1 svg {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+ }
      main {
          max-width: 1160px;
          margin-inline: auto;
