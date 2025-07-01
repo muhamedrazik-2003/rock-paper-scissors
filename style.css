@@ -59,10 +59,10 @@
      isolation: isolate;
  }
 
-@font-face {
-    font-family: 'myFont-score';
-    src: url('./fonts/Kollektif-Bold.ttf') ;
-}
+ @font-face {
+     font-family: 'myFont-score';
+     src: url('./fonts/Kollektif-Bold.ttf');
+ }
 
  @font-face {
      font-family: 'MyFont-regular';
@@ -76,8 +76,6 @@
  }
 
  main {
-     max-width: 1160px;
-     margin-inline: auto;
      min-height: 100vh;
      display: flex;
      flex-direction: column-reverse;
@@ -94,8 +92,8 @@
      border-radius: 50%;
  }
 
+ /* button triagle code for both player and system */
  .play-section {
-     /* width: 236px; */
      display: flex;
      flex-direction: column;
      gap: .5rem;
@@ -138,30 +136,7 @@
      transform: rotate(-53deg);
  }
 
- .player-playbutton {
-     transform: rotate(180deg);
- }
-
- .player-playbutton button {
-    cursor: pointer;
-    transition: all 150ms ease;
-     transform: rotate(180deg);
- }
- .player-playbutton button:hover {
-     transform: rotate(180deg) scale(1.1);
-     background-color: hsl(50, 100%, 70%);
-     box-shadow: 
-        0 0 0 8px hsl(49, 100%, 67%),
-         0 0 0 16px hsla(49, 100%, 86%, 0);
-
- }
- .player-playbutton button:active {
-     transform: rotate(180deg) scale(1);
-     box-shadow: 
-     0 0 0 10px hsl(49, 57%, 54%),
-     0 0 0 18px hsla(49, 100%, 79%, 0.523);
- }
-
+ /* player button section */
  .player-section {
      flex-direction: column-reverse;
  }
@@ -170,6 +145,34 @@
      color: rgb(0, 140, 58);
  }
 
+ .player-playbutton {
+     transform: rotate(180deg);
+ }
+
+ .player-playbutton button {
+     outline: none;
+     cursor: pointer;
+     transition: all 150ms ease;
+     transform: rotate(180deg);
+ }
+
+ .player-playbutton button:hover {
+     transform: rotate(180deg) scale(1.1);
+     background-color: hsl(50, 100%, 70%);
+     box-shadow:
+         0 0 0 8px hsl(49, 100%, 67%),
+         0 0 0 16px hsla(49, 100%, 86%, 0);
+
+ }
+
+ .player-playbutton button:active {
+     transform: rotate(180deg) scale(1);
+     box-shadow:
+         0 0 0 10px hsl(49, 57%, 54%),
+         0 0 0 18px hsla(49, 100%, 79%, 0.523);
+ }
+
+ /* computer section heading */
  .computer-section h2 {
      color: rgb(131, 44, 0);
 
@@ -187,13 +190,14 @@
      grid-column-start: 2;
  }
 
+ /* score section */
  .score-section {
      font-size: 1rem;
      margin-block: 2rem;
  }
 
  #scoreboard {
-    font-family: 'myFont-score';
+     font-family: 'myFont-score';
      display: flex;
      justify-content: center;
      gap: 1.4rem;
@@ -205,10 +209,86 @@
  }
 
  #result {
-    background-color:black;
-    border-radius: 24px;
-    padding: 8px 16px;
-    color: white;
+     background-color: black;
+     border-radius: 24px;
+     padding: 8px 16px;
+     color: white;
      margin-top: 12px;
      font-size: 1rem;
+ }
+
+ @media (min-width: 768px) {
+     main {
+         max-width: 1160px;
+         margin-inline: auto;
+         flex-direction: row;
+         gap: 2rem;
+     }
+
+     button {
+         border-width: 10px;
+         font-size: 3rem;
+         padding: 1.5rem;
+     }
+
+     .play-section {
+         font-size: 2rem;
+         gap: 2rem;
+
+     }
+
+     .playbutton {
+         gap: 8rem 2rem;
+     }
+
+     .player-section {
+         flex-direction: column;
+     }
+
+     .player-playbutton {
+         transform: rotate(100deg);
+     }
+
+     .computer-playbutton {
+         transform: rotate(-100deg);
+     }
+
+     .line-1,
+     .line-2,
+     .line-3 {
+         top: 15%;
+         width: 200px;
+         height: 12px;
+     }
+
+     .line-2 {
+         top: 50%;
+         left: 3%;
+         transform: rotate(60deg);
+     }
+
+     .line-3 {
+         top: 50%;
+         left: unset;
+         right: 3%;
+         transform: rotate(-60deg);
+     }
+
+     .player-playbutton button:hover {
+         box-shadow:
+             0 0 0 12px hsla(49, 100%, 67%, 0.841),
+             0 0 0 24px hsla(49, 100%, 86%, 0);
+
+     }
+
+     .player-playbutton button:active {
+         transform: rotate(180deg) scale(1);
+         box-shadow:
+             0 0 0 14px hsla(49, 70%, 60%, 0.76),
+             0 0 0 26px hsla(49, 100%, 79%, 0.523);
+     }
+
+     .score-section {
+         width: 400px;
+     }
  }
